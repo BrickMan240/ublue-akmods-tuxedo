@@ -6,7 +6,7 @@ ARCH="$(rpm -E '%_arch')"
 KERNEL="$(rpm -q "${KERNEL_NAME}" --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 RELEASE="$(rpm -E '%fedora')"
 
-dnf install -y rpmdevtools rpm-build git
+dnf install -y rpmdevtools rpm-build git tree
 rpmdev-setuptree
 git clone https://github.com/BrickMan240/tuxedo-drivers-kmod
 cd tuxedo-drivers-kmod
