@@ -21,10 +21,10 @@ rm -rf tuxedo-drivers-kmod/
 
 ### BUILD tuxedo-drivers (succeed or fail-fast with debug output)
 dnf install -y \
-    ~/rpmbuild/RPMS/x86_64/akmod-tuxedo-drivers-$TD_VERSION-1.f$RELEASE.x86_64.rpm \
-    ~/rpmbuild/RPMS/x86_64/tuxedo-drivers-kmod-common-$TD_VERSION-1.f$RELEASE.x86_64.rpm \
-    ~/rpmbuild/RPMS/x86_64/tuxedo-drivers-kmod-$TD_VERSION-1.f$RELEASE.x86_64.rpm \
-    ~/rpmbuild/RPMS/x86_64/kmod-tuxedo-drivers-$TD_VERSION-1.f$RELEASE.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/akmod-tuxedo-drivers-$TD_VERSION-1.fc$RELEASE.x86_64.rpm \
+    ~/rpmbuild/RPMS/x86_64/tuxedo-drivers-kmod-common-$TD_VERSION-1.fc$RELEASE.x86_64.rpm \
+    ~/rpmbuild/RPMS/x86_64/tuxedo-drivers-kmod-$TD_VERSION-1.fc$RELEASE.x86_64.rpm \
+    ~/rpmbuild/RPMS/x86_64/kmod-tuxedo-drivers-$TD_VERSION-1.fc$RELEASE.x86_64.rpm
 akmods --force --kernels "${KERNEL}" --kmod tuxedo-drivers-kmod
 export HOME="$OLD_HOME"
 #modinfo /usr/lib/modules/${KERNEL}/extra/framework-laptop/framework_laptop.ko.xz > /dev/null \
