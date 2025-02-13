@@ -8,9 +8,6 @@ RELEASE="$(rpm -E '%fedora')"
 
 dnf install -y rpmdevtools rpm-build git tree
 
-OLD_HOME="$HOME"
-export HOME="/tmp"
-
 rpmdev-setuptree
 git clone https://github.com/BrickMan240/tuxedo-drivers-kmod
 cd tuxedo-drivers-kmod
@@ -26,6 +23,5 @@ dnf install -y \
     ~/rpmbuild/RPMS/x86_64/tuxedo-drivers-kmod-$TD_VERSION-1.fc$RELEASE.x86_64.rpm \
     ~/rpmbuild/RPMS/x86_64/kmod-tuxedo-drivers-$TD_VERSION-1.fc$RELEASE.x86_64.rpm
 akmods --force --kernels "${KERNEL}" --kmod tuxedo-drivers-kmod
-export HOME="$OLD_HOME"
 #modinfo /usr/lib/modules/${KERNEL}/extra/framework-laptop/framework_laptop.ko.xz > /dev/null \
 #|| (find /var/cache/akmods/framework-laptop/ -name \*.log -print -exec cat {} \; && exit 1)

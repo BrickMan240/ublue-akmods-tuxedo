@@ -38,7 +38,8 @@ if [[ "${DUAL_SIGN}" == "true" ]]; then
         rm -rf /tmp/buildroot
     done
     rm -rf /usr/lib/modules/"${KERNEL}"/extra
-    dnf reinstall -y /root/rpmbuild/RPMS/"$(uname -m)"/kmod-*-"${KERNEL}"-*.rpm
+    dnf reinstall -y /root/rpmbuild/RPMS/"$(uname -m)"/kmod-*-"${KERNEL}"-*.rpm \
+    /root/rpmbuild/RPMS/x86_64/*tuxedo*.rpm
     for module in /usr/lib/modules/"${KERNEL}"/extra/*/*.ko*; do
         if ! modinfo "${module}" >/dev/null; then
             exit 1

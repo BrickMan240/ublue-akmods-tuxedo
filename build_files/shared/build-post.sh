@@ -33,4 +33,6 @@ done
 mkdir -p /var/cache/kernel-rpms
 cp -a /tmp/kernel_cache/*.rpm /var/cache/kernel-rpms
 
+cp /root/rpmbuild/RPMS/x86_64/*tuxedo*.rpm /var/cache/rpms/kmods/
+
 find /var/cache/rpms
