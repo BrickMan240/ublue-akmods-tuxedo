@@ -2,3 +2,4 @@ certs/private_key.priv.prod
 certs/public_key.der.prod
 certs/private_key.priv
 certs/private_key_2.priv
+cosign.key
